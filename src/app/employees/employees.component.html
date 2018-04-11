@@ -1,0 +1,40 @@
+<form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)"> 
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">create Employee</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="fullname">fullname</label>
+          <input required id="fullname" name="fullname" [(ngModel)]="fullname" type="text" class="form-control" #fullNameControl="ngModel">
+        </div>
+        <div>
+          touched:{{ fullNameControl.touched }}
+        </div>
+        <div>
+          untouched:{{ fullNameControl.untouched }}
+        </div>
+        <div>
+          dirty:{{ fullNameControl.dirty }}
+        </div>
+        <div>
+          pristine:{{ fullNameControl.pristine }}
+        </div>
+        <div>
+            valid:{{ fullNameControl.valid }}
+        </div>
+        <div>
+            invalid:{{ fullNameControl.invalid }}
+        </div>
+        <div class="form-group">
+            <label for="email">email</label>
+            <input id="email" name="email" [(ngModel)]="email" type="text" class="form-control">
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+</form>
+Angular generated form module:{{employeeForm.value | json}}
